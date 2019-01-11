@@ -27,3 +27,11 @@ body{
     -ms-flex-align:center;
     align-items:center
 }
+
+.kayitolmaortalama{
+
+width: 40%;
+text-align: center;
+margin:0 auto; /*ortalamakodu*/
+
+}
