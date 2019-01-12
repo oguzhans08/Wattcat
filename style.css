@@ -57,6 +57,17 @@ border-color: black;
 
 
 
+#mysearch:focus + .input-group-addon {
+	z-index: 1;
+}
+
+#search-btn:hover {
+	cursor: pointer;
+	/*color: gold;*/
+	background-color: #ffc107;
+}
+
+
 
 .form-control-lg2{
     border-radius: 0px 0px 15px 15px;
