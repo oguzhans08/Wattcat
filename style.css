@@ -23,9 +23,9 @@ body{
     box-shadow:0 19px 30px 0 rgba(255,188,92,.48);
     width:100px;
     display:flex;
-   
     -ms-flex-align:center;
-    align-items:center
+    align-items:center;
+    justify-content:center;
 }
 
 .kayitolmaortalama{
@@ -123,4 +123,46 @@ line-height: 1.5;
     .mobilde_goster {
       display:block;
     }
+  }
+
+  .no-padding {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .morarkaplan{
+
+height: 600px;
+
+
+
+   
+    background-color: rgb(62,31,147);
+  }
+
+  .yesilarkaplan{
+
+    height: 600px;
+    
+    
+    
+       
+        background-color: rgb(5,110,130);
+      }
+    
+
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+   
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+    background-color: blue;
+    
   }
