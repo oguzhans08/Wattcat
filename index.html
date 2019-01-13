@@ -12,6 +12,36 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 
+    <link rel="stylesheet" href="main.js">
+    <script>
+    
+    
+    function sifre()
+{
+	var kullanici, sifre;
+	kullanici=prompt("Lütfen kullanici adinizi giriniz:");
+	sifre=prompt("Lütfen şifrenizi giriniz:")
+	for(var i=1; i<=3; i++)
+	{
+	if(kullanici!="orhan" || sifre!="123")
+	{
+        alert("Yanlış kullanıcı adı ya da şifre");
+        break;			
+			kullanici=prompt("Kullanici adinizi tekrar giriniz");
+            sifre=prompt("Sifrenizi tekrar giriniz");	
+           					
+         }
+	else
+	{  
+           
+
+             window.location.replace("file:///Users/salimcansatici/Desktop/Wattcaty/profile.html");
+	     break;
+	}
+        }
+}
+    
+    </script>
 </head>
 
 <body>
@@ -116,12 +146,15 @@
                         <div class="kayitolmaortalama">
 
 
-                            <input class="form-control form-control-lg" type="text" placeholder="Mail">
-                            <input class="form-control form-control-lg2" type="text" placeholder="Şifre">
+                            <input class="form-control form-control-lg" id="kullanici" type="text" placeholder="Mail">
+                            <input class="form-control form-control-lg2" id ="sifre"type="text" placeholder="Şifre">
 
 
                             <br>
-                            <button type="button" class="btn btn-primary btn-lg">Üye Ol!</button>
+                            <button type="site" class="btn btn-primary btn-lg" value="Lütfen siteye giriş yapın!" onclick="sifre()" >Üye Ol!</button>
+                            
+                     
+
 
                         </div>
 
