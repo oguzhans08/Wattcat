@@ -13,34 +13,54 @@
     <link rel="stylesheet" href="style.css">
 
     <link rel="stylesheet" href="main.js">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script>
-    
-    
-    function sifre()
-{
-	var kullanici, sifre;
-	kullanici=prompt("Lütfen kullanici adinizi giriniz:");
-	sifre=prompt("Lütfen şifrenizi giriniz:")
-	for(var i=1; i<=3; i++)
-	{
-	if(kullanici!="admin" || sifre!="123")
-	{
-        alert("Yanlış kullanıcı adı ya da şifre");
-        break;			
-			kullanici=prompt("Kullanici adinizi tekrar giriniz");
-            sifre=prompt("Sifrenizi tekrar giriniz");	
-           					
-         }
-	else
-	{  
-           
 
-             window.location.replace("file:///Users/salimcansatici/Desktop/Wattcaty/profile.html");
-	     break;
-	}
-        }
+function kontrol() {
+  var username, pass, text ; 
+  
+  // Kullanıcı adının uzunluğunu username değişkenine aktar
+  // Şifrenin uzunluğunu pass değişkenine aktar
+  username= document.getElementById("kullaniciad").value.length;
+  pass= document.getElementById("kullanicisifre").value.length;
+  
+ 
+  // Kullanıcı adı veya şifre girilmemişse
+  if (username == 0 || pass == 0) {    
+  text= "Kullanici adı veya sifre bos birakilamaz";
+  }
+  
+  // Şifre 6 karakterden kısaysa
+  else if (pass < 6) {
+  text= "Sifre 6 karakterden kisa olamaz";
+  }
+  
+  // Kullanıcı adı 3'den küçük 20'den fazlaysa 
+  else if (username < 3 || username > 20) {    
+  text= "Kullanici adi 3-20 karakter arasında olmalıdır"; 
+  }
+      
+  // İkisi de uygunsa
+  else {    
+
+  text= "Kayıt Basarili" ;
+  console.log("Profil sayfasına yönlendiriliyorsunuz");
+  window.location.href = "profile.html"
+
+
+
+
+  }
+  
+  
+  document.getElementById("result").innerHTML = text;
 }
-    
+
     </script>
 </head>
 
@@ -55,14 +75,14 @@
                     <div class="float-left">
                         <a href="index.html" class="">
                             <div class="mobilde_gizle">
-                                    <img src="https://i.hizliresim.com/k9EBl7.png" media="(max-width: 600px)" alt="">
+                                <img src="https://i.hizliresim.com/k9EBl7.png" media="(max-width: 600px)" alt="">
 
                             </div>
                             <div class="mobilde_goster">
 
-                                    <img src="http://wattcat.com/img/Wattcat-Logo-Siyah.png" media="(max-width: 600px)" alt="">
+                                <img src="http://wattcat.com/img/Wattcat-Logo-Siyah.png" media="(max-width: 600px)" alt="">
                             </div>
-                          
+
 
 
 
@@ -89,17 +109,27 @@
                         </div>
 
                     </div>
+                    <!-- Button trigger modal -->
+
 
                     <div class="float-right" style="margin-top:8px;">
 
-                   
 
 
-                        
-                            <a href="#"> <div class="humburger style2" onclick="sifre()" href="#services">
-                            <a class="" style="text-align: center;" href="#services">Giriş Yap</a>
 
-                        </div>
+
+
+
+
+                        <a href="#">
+                            <div class="" onclick="" href="#services"><button type="button"
+                                    class="humburger style2" data-toggle="modal" data-target="#exampleModal">
+                             Giriş Yap
+                                </button>
+
+
+
+                            </div>
 
 
                     </div>
@@ -116,7 +146,54 @@
     </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Kullanıcı Girişi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
 
+                
+                        
+                        
+
+                        
+
+                    <input type="text" class="form-control" id="kullaniciad" placeholder="Kullanıcı Adı" aria-label="Username" aria-describedby="basic-addon1">
+                    <br>
+                    <input type="password" class="form-control" id="kullanicisifre" placeholder="Şifre" aria-label="Sifre" aria-describedby="basic-addon1">
+                  
+                 
+                    <p class="result" id="result"></p>
+
+                    
+        
+                   
+
+
+                </div>
+               
+                <div class="modal-footer">
+
+                     
+                        
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <button type="button" class="btn btn-primary" onclick="kontrol()" >Giriş Yap</button>
+
+              
+
+ 
+
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container" style="margin-top:100px;">
         <div class="row">
             <div style="text-align: left;">
@@ -133,6 +210,7 @@
                     <br>
                     <p>-----------------------</p>
                 </div>
+              
 
             </div>
 
@@ -148,16 +226,17 @@
 
 
                             <input class="form-control form-control-lg" id="kullanici" type="text" placeholder="Mail">
-                            <input class="form-control form-control-lg2" id ="sifre"type="text" placeholder="Şifre">
+                            <input class="form-control form-control-lg2" id="sifre" type="text" placeholder="Şifre">
 
 
                             <br>
-                  
 
-                            
-                            <button type="site" class="btn btn-primary btn-lg" value="Lütfen siteye giriş yapın!" >Üye Ol!</button>
-                            
-                     
+
+
+                            <button type="site" class="btn btn-primary btn-lg" value="Lütfen siteye giriş yapın!">Üye
+                                Ol!</button>
+
+
 
 
                         </div>
@@ -229,7 +308,7 @@
             <div class="col-lg-8 mx-auto">
                 <div class="text-center" style="margin-top:-450px;">
 
-<br>
+                    <br>
                     <h1> Popüler Kitapları Keşfedin! </h1>
 
                     <br>
@@ -246,47 +325,53 @@
                         <div class="column">
                             <img src="https://a.wattpad.com/cover/32496627-288-k273134.jpg" draggable="false" alt="3"
                                 style="width:100%">
-                        </div>                    </div><br><button type="button" class="btn btn-primary btn-lg">Daha fazla</button>
-
-                    </div>                
-
-                </div>          
-            </div>
-        </div>
-    </div>     
-
-<br><br><br><br><div class="mobilde_gizle"> <img style="width:100%;" id="image" src="file:///Users/salimcansatici/Desktop/yesil-alt.png">   </div>   
-
-<div class="turuncuarkaplan">
-<br>
-
-        <div class="grid-container">
-                <div class="mobilde_gizle">
-                <div class="item1"style="margin-top:-60px;"><br><br><br><br><div class="mobilde_gizle"> <img style="width:60%;" id="image" src="https://wattcat.com/img/Wattcat-Logo-Beyaz.png">   </div>   
-                Wattcat edebiyata getirmiş <br>olduğu dijitalleşmenin arkasında!
-            </div></div>  
-                <div class="item2"style="margin-top:40px;"> <br>
-<p>Topluluk</p>
-<p>Wattcat</p>
-<p>Facebook</p>
-<p>Instagram</p>
-<p>Youtube</p>
-<p>Twitter</p>
-
-
-
+                        </div>
+                    </div><br><button type="button" class="btn btn-primary btn-lg">Daha fazla</button>
 
                 </div>
-                <div class="item2" style="margin-top:50px;"> <br>
-                    <p>İş</p>
-                    <p>Linkedln</p>
-                    <p>Instagram @LifeatWattcat</p>
-                   
-                    
-                    
-                    
-                    
-                                    </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <br><br><br><br>
+    <div class="mobilde_gizle"> <img style="width:100%;" id="image" src="file:///Users/salimcansatici/Desktop/yesil-alt.png">
+    </div>
+
+    <div class="turuncuarkaplan">
+        <br>
+
+        <div class="grid-container">
+            <div class="mobilde_gizle">
+                <div class="item1" style="margin-top:-60px;"><br><br><br><br>
+                    <div class="mobilde_gizle"> <img style="width:60%;" id="image" src="https://wattcat.com/img/Wattcat-Logo-Beyaz.png">
+                    </div>
+                    Wattcat edebiyata getirmiş <br>olduğu dijitalleşmenin arkasında!
+                </div>
+            </div>
+            <div class="item2" style="margin-top:40px;"> <br>
+                <p>Topluluk</p>
+                <p>Wattcat</p>
+                <p>Facebook</p>
+                <p>Instagram</p>
+                <p>Youtube</p>
+                <p>Twitter</p>
+
+
+
+
+            </div>
+            <div class="item2" style="margin-top:50px;"> <br>
+                <p>İş</p>
+                <p>Linkedln</p>
+                <p>Instagram @LifeatWattcat</p>
+
+
+
+
+
+            </div>
 </body>
 
 </html>
