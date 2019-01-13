@@ -1,4 +1,8 @@
 
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: none;}
+a:active {text-decoration: none;}
 body{
     overflow-x:hidden;
     font-family:Roboto,sans-serif;
@@ -135,23 +139,24 @@ line-height: 1.5;
 height: 600px;
 
 
-
-   
     background-color: rgb(62,31,147);
   }
 
   .yesilarkaplan{
 
-    height: 600px;
+    height: 800px;
     
-    
-    
-       
-        background-color: rgb(5,110,130);
+        background-color: rgb(5,115,135);
       }
     
 
   .column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+   
+  }
+  .column2 {
     float: left;
     width: 33.33%;
     padding: 5px;
@@ -165,4 +170,27 @@ height: 600px;
     display: table;
     background-color: blue;
     
+  }
+  .turuncuarkaplan{
+height: 600px;
+background-color: #ffbc5c;
+margin-top:-60px;
+
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+  }
+  
+  .grid-container > div {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
+  
+  .item1 {
+    grid-row: 1 / 3;
   }
