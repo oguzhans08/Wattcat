@@ -23,7 +23,7 @@
 	sifre=prompt("Lütfen şifrenizi giriniz:")
 	for(var i=1; i<=3; i++)
 	{
-	if(kullanici!="orhan" || sifre!="123")
+	if(kullanici!="admin" || sifre!="123")
 	{
         alert("Yanlış kullanıcı adı ya da şifre");
         break;			
@@ -92,10 +92,11 @@
 
                     <div class="float-right" style="margin-top:8px;">
 
+                   
 
 
                         
-                            <a href="#"> <div class="humburger style2" onclick="location.href='#services'" href="#services">
+                            <a href="#"> <div class="humburger style2" onclick="sifre()" href="#services">
                             <a class="" style="text-align: center;" href="#services">Giriş Yap</a>
 
                         </div>
@@ -151,7 +152,10 @@
 
 
                             <br>
-                            <button type="site" class="btn btn-primary btn-lg" value="Lütfen siteye giriş yapın!" onclick="sifre()" >Üye Ol!</button>
+                  
+
+                            
+                            <button type="site" class="btn btn-primary btn-lg" value="Lütfen siteye giriş yapın!" >Üye Ol!</button>
                             
                      
 

@@ -5,7 +5,7 @@ function sifre()
 	sifre=prompt("Lütfen şifrenizi giriniz:")
 	for(var i=1; i<=3; i++)
 	{
-	if(kullanici!="orhan" || sifre!="123")
+	if(kullanici!="admin" || sifre!="123")
 	{
 		alert("Yanlış kullanıcı adı ya da şifre");
 			kullanici=prompt("Kullanici adinizi tekrar giriniz");
