@@ -260,9 +260,26 @@ margin-left: 10%;
   .kagit{
 
 color: aliceblue;
-background-color:wheat;
-height: 1200px;
+background-color:rgb(255, 242, 219);
+height: 100%;
 
 
 
   }
+
+  .gelismis{
+ 
+    border: 5px solid rgba(255, 255, 255, .5);
+    border-radius: 115px;
+    width:200px;
+    height:200px;
+    line-height:200px;
+    font-size:20px;
+
+    margin: 0 auto;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    text-shadow:#2d4251 5px 5px 5px;
+    }
+    
