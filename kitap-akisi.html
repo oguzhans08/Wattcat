@@ -7,67 +7,47 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
     crossorigin="anonymous">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">  
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Shuffle/4.0.0/shuffle.min.js'></script>
+
+  
+
+
+
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.css'>
+
 </head>
 
 <style>
-   div.gallery {
-  border: 1px solid #ccc;
-}
 
-div.gallery:hover {
-  border: 1px solid #777;
-}
-
-div.gallery img {
-  width: 100%;
-  height: auto;
-}
-
-div.desc {
-  padding: 15px;
-  text-align: center;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.responsive {
-  padding: 0 6px;
-  float: left;
-  width: 24.99999%;
-}
-
-@media only screen and (max-width: 700px) {
-  .responsive {
-    width: 49.99999%;
-    margin: 6px 0;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .responsive {
-    width: 100%;
-  }
-}
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 </style>
 
 <body>
 
 
      <!-- Plug Bootstrap Nav Bar code here -->
-     <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: blue; position:relative;">
+     <div class="page-container">
+
+      <img style="width:100%;z-index: -1;" id="image" src="http://wattcat.com/img/mor-alt.png">
+      
+        <img style="width:200px;  z-index: 3; margin-top:-15%; margin-left: 15%;  " id="image"  href="" src="http://wattcat.com/img/Wattcat-Logo-Beyaz.png">
+
+
+  
+
+    </div>
+    
+     
             <a class="navbar-brand" href="#">
 
                 <a href="index.html">
-                    <img style="width:200px;" id="image"  href="" src="http://wattcat.com/img/Wattcat-Logo-Beyaz.png"></a>
+                   </a>
+
+                    
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -77,8 +57,7 @@ div.desc {
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
          
-                        <a href="#"> <div class="humburger style0" style="margin-left: 50px; "onclick="location.href='kitap-akisi.html'" href="#services">
-                                <a class="" style="text-align: center;" href="kitap-akisi.html">Keşfet</a>
+               
                                 
                                 </div>
                                     
@@ -87,147 +66,403 @@ div.desc {
                 
                 
        
-<div class="mobilde_gizle">
-                <form class="form" style="margin-left:250px;">
-                        <div class="input-group">
-                            <input class="form-control" type="text" placeholder="Ara" aria-label="Search" style=" border-radius: 40px; width: 450px; height: 50px; margin-left: 50px;"
-                                id="mysearch">
-                            <div class="input-group-addon" style="margin-left: -50px; z-index: 3; border-radius: 40px; background-color: transparent; border:none;">
-                            </div>
-                     
-                    </form>
-                </div>
-              </ul>
-              <a href="#"> <div class="humburger style0 " onclick="location.href='profile.html'" href="profile.html">
-                    <a class="" style="text-align: center; position:absolute;" href="profile.html">Profilim</a>
 
-                </div>
-            </div>
           </nav>    
     
 
     </a>
-  </nav>
-<div class="container">
+  </nav> <br>
+  <div class="page-container">
 
+      <div class="page-title category-title">
+        <!-- <h1>Book Viewer</h1> -->
+      </div>
 
+      <section id="book_list">
 
+        <div class="toolbar row">
+          <div class="filter-options small-12 medium-9 columns">
+            <a href="#" class="filter-item active" data-group="all">Bütün Kategoriler</a>
+            <a href="#" class="filter-item" data-group="fantastik">Fantastik</a>
+            <a href="#" class="filter-item" data-group="bilimkurgu">Bilimkurgu</a>
+            <a href="#" class="filter-item" data-group="romantik">Romantik</a>
+            <a href="#" class="filter-item" data-group="mizah">Mizah</a>
+            <a href="#" class="filter-item" data-group="ya">Y.A</a>
+          </div>
 
+          <div class="small-12 medium-3 columns">
+            <select class="sort-options">
+            <option value="" disabled selected>Sırala</option>
+            <option value="" >Önerilen</option>
+            <option value="title">Alfabetik</option>
+            <option value="date-created">Yayınlanma Tarihine Göre</option>
+            </select>
+          </div>
+        </div>
 
-  <div class="header">
-    <br>    
-  </div>
-  <h2>Kitap Akışı</h2>
-  <h4>En Popüler Listesi</h4>
-  <p> </p>
-  <div class="responsive">
-    <div class="gallery">
-      <a target="_blank" href="file:///Users/salimcansatici/Desktop/Wattcaty/okuma-sayfasi.html">
-        <img src="https://a.wattpad.com/cover/60614937-288-k173680.jpg" alt="Cinque Terre" width="600" height="400">
-      </a>
+        <div class="grid-shuffle">
+          <ul id="grid" class="row">
 
-    </div>
-  </div>
-  
-  
-  <div class="responsive">
-    <div class="gallery">
-      <a target="_self" href="#">
-        <img src="https://a.wattpad.com/cover/86581018-288-k331403.jpg" alt="Forest" width="600" height="400">
-      </a>
+            <li class="book-item small-12 medium-6 columns" data-groups='["romantik"]' data-date-created='2017' data-title='Nazenin' data-color='#0000FF'>
+              <div class="bk-img">
+                <div class="bk-wrapper">
+                  <div class="bk-book bk-bookdefault">
+                    <div class="bk-front">
+                      <div class="bk-cover" style="background-image: url('file:///Users/salimcansatici/Downloads/select_150x215.jpg');"></div>
+                    </div>
+                    <div class="bk-back"></div>
+                    <div class="bk-left"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="item-details">
+                <h3 class="book-item_title">Nazenin</h3>
+                <p class="author">Salimcan Satıcı &bull; 2017</p>
+                <p>#dexilkromanim (2017) adlı yarışmanın birincisi.
+                    Nazenin; İzmir'in güzüne kalmış menekşeler ile süslü, tatlı mı tatlı bir sevdanın masalı.</p>
+                <a href="#" class="button ">Detaylar</a>
+              </div>
+
+              <div class="overlay-details">
+                <a href="#" class="close-overlay-btn">Close</a>
+                <div class="overlay-image">
+                  <img src="https://a.wattpad.com/cover/60614937-288-k173680.jpg" alt="Book Cover">
+                  <div class="back-color"></div>
+                </div>
+                <div class="overlay-desc activated">
+                  <h2 class="overlay_title">Nazenin</h2>
+                  <p class="author">@Tacdelen</p>
+                  <p class="published">2017</p>
+                  <p class="synopsis">#dexilkromanim (2017) adlı yarışmanın birincisi.
+                      Nazenin; İzmir'in güzüne kalmış menekşeler ile süslü, tatlı mı tatlı bir sevdanın masalı.  Taze dilli, bir o kadar da çekingen bir güldürü..
+                      Aşk üçgeninin açılarını hesaplayacak kadar zeki olan bir genç adamın hüznü ile dolu..
+                      Gizemli kadını, tehlike kokulu..
+                      Dahası, maceralar ile dolu bir kitaptır.</p>
+                  <a href="https://www.youtube.com/watch?v=T3hXC5yNZOc" class="button">Oku</a>
+                </div>
+                
+              </div>
+            </li>
+
+            <li class="book-item small-12 medium-6 columns" data-groups='["romantik"]' data-date-created='1951' data-title='Mor Salkim' data-color='#009c8b'>
+              <div class="bk-img">
+                <div class="bk-wrapper">
+                  <div class="bk-book bk-bookdefault">
+                    <div class="bk-front">
+                      <div class="bk-cover" style="background-image: url('file:///Users/salimcansatici/Desktop/Kitap%20Resimleri/morsalkim-pre.jpg')"></div>
+                    </div>
+                    <div class="bk-back"></div>
+                    <div class="bk-left"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="item-details">
+                <h3 class="book-item_title">Mor Salkım</h3>
+                <p class="author">@Dimpledgirll &bull; 2017</p>
+                <p>"Elbet bir gün mor, beyaza dönüşecekti."</p>
+                <a href="#" class="button ">Detaylar</a>
+              </div>
+
+              <div class="overlay-details">
+                <a href="#" class="close-overlay-btn">Kapat</a>
+                <div class="overlay-image">
+                  <img src="file:///Users/salimcansatici/Desktop/Kitap%20Resimleri/morsalkim-ori.jpg" alt="Book Cover">
+                  <div class="back-color"></div>
+                </div>
+                <div class="overlay-desc activated">
+                  <h2 class="overlay_title">Mor Salkım</h2>
+                  <p class="author">@Dimpledgirll</p>
+                  <p class="published">2017</p>
+                  <p class="synopsis">İstemediği şeyleri yapmak zorunda kalan bir kız. Masum değildi, kendini ezdiren biri hiç değildi.
+
+                    Siz ne için her şeyinizi feda ederdiniz?
+                    
+                    Yapmak istemediğiniz fakat yapmak zorunda kaldığınız şey ne için olabilirdi? 
+                    
+                    Her şeyin başladığı nokta, her şeyin biteceği nokta olabilir miydi? 
+                    
+                    Peki olaylar nasıl başlayacak, nasıl gelişecek ve nasıl bitecek?
+                    
+                    "Elbet bir gün mor, beyaza dönüşecekti."</p>
+                  <a href="#" class="button">Oku</a>
+                </div>
+
+            </li>
+
+            <li class="book-item small-12 medium-6 columns" data-groups='["romantik"]' data-date-created='2018' data-title='2018' data-color='#9c9688'>
+              <div class="bk-img">
+                <div class="bk-wrapper">
+                  <div class="bk-book bk-bookdefault">
+                    <div class="bk-front">
+                      <div class="bk-cover" style="background-image: url('file:///Users/salimcansatici/Desktop/Kitap%20Resimleri/bir-semte-vurdu-gece-pre.jpg')"></div>
+                    </div>
+                    <div class="bk-back"></div>
+                    <div class="bk-left"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="item-details">
+                <h3 class="book-item_title">Bir Semte Vurdu Gece</h3>
+                <p class="author">@asilyezza &bull; 2018</p>
+                <p>Eğer bedenime bir çizik atsaydım, kuşkusuz ki o çizik benim kaderim olurdu. Çünkü biliyordum, ben dikiş tutmayan bir yaraydım. 
+                  Ben kaderi kanayan bir yaraydım.
+                  Ben küçük bir kesikte son bulan bir yaranın anısına ithaftım.</p>
+                <a href="#" class="button ">Detaylar</a>
+              </div>
+
+              <div class="overlay-details">
+                <a href="#" class="close-overlay-btn">Kapat</a>
+                <div class="overlay-image">
+                  <img src="file:///Users/salimcansatici/Desktop/Kitap%20Resimleri/bir-semte-vurdu-gece-ori.jpg" alt="Book Cover">
+                  <div class="back-color"></div>
+                </div>
+                <div class="overlay-desc activated">
+                  <h2 class="overlay_title">Bir Semte Vurdu Gece</h2>
+                  <p class="author">@asilyezza</p>
+                  <p class="published">2018</p>
+                  <p class="synopsis">"Göğüme,
+                    Göğsüme;
+                    sokul usulca."
+                    
+                    Eğer bedenime bir çizik atsaydım, kuşkusuz ki o çizik benim kaderim olurdu. Çünkü biliyordum, ben dikiş tutmayan bir yaraydım. 
+                    Ben kaderi kanayan bir yaraydım.
+                    Ben küçük bir kesikte son bulan bir yaranın anısına ithaftım.
+                    
+                    Bu acının ithafı baştan anneme, annemin yitik ruhunda yaşayan babama, babamın kırık ninnisi ve annemin çığlığının değdiği ruhuma saplandı. Bense bir adama saplı kaldım, sapını çürüttüm. 
+                    
+                    Ben bir adama, saklandım. Beni kimse bulamaz zannettim. Seçilen ebenin ben olduğunu bilmiyorum. 
+                    
+                    Sonradan öğrendim, saklananlar onlar. Görüyorum, ama bulamıyorum. 
+                    
+                    "Bana değil. Ona.
+                    Ruhuma. 
+                    Onu tanımıyorum, tanıyamıyorum.
+                    Kimseyi, kendimi. 
+                    Hiç."</p>
+                  <a href="#" class="button">Oku</a>
+                </div>
+               
+              </div>
+            </li>
+
+            <li class="book-item small-12 medium-6 columns" data-groups='["romantik","ya"]' data-date-created='1954' data-title='Lord of the Flies' data-color='#db2e0f'>
+              <div class="bk-img">
+                <div class="bk-wrapper">
+                  <div class="bk-book bk-bookdefault">
+                    <div class="bk-front">
+                      <div class="bk-cover" style="background-image: url('file:///Users/salimcansatici/Desktop/Kitap%20Resimleri/kor-heves-pre.jpg')"></div>
+                    </div>
+                    <div class="bk-back"></div>
+                    <div class="bk-left"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="item-details">
+                <h3 class="book-item_title">Kor Heves</h3>
+                <p class="author">@lefazen &bull; 2016</p>
+                <p>Saplantı. 
+
+                  Bir bedene, zihine, ruha saplantı. Her şey bundan ibaretti işte, zihnim saplanmıştı zihnine, ruhum saplanmıştı ruhuna ve bedenimin bedenine...
+                  </p>
+                <a href="#" class="button ">Detaylar</a>
+              </div>
+
+              <div class="overlay-details">
+                <a href="#" class="close-overlay-btn">Close</a>
+                <div class="overlay-image">
+                  <img src="file:///Users/salimcansatici/Desktop/Kitap%20Resimleri/kor-heves-ori.jpg" alt="Book Cover">
+                  <div class="back-color"></div>
+                </div>
+                <div class="overlay-desc activated">
+                  <h2 class="overlay_title">Kor Heves</h2>
+                  <p class="author">@lefazen</p>
+                  <p class="published">2016</p>
+                  <p class="synopsis">Saplantı. 
+
+                    Bir bedene, zihine, ruha saplantı. Her şey bundan ibaretti işte, zihnim saplanmıştı zihnine, ruhum saplanmıştı ruhuna ve bedenimin bedenine saplanma düşüncesi bile beni tüketiyordu. 
+                    
+                    O adam beni tüketiyordu. 
+                    
+                     Kızıl saçlarının asi tutamları karışırken, sigarasının dumanı yayıldı. Gece hakim, deniz yenik. 
+                    
+                    
+                    
+                    -
+                    
+                    "Kor Heves, kor, kör değil."</p>
+                  <a href="#" class="button">Oku</a>
+                </div>
+                
+            </li>
+
+            <li class="book-item small-12 medium-6 columns" data-groups='["mizah"]' data-date-created='2015' data-title='Paralel Odalar Teorisi' data-color='#e3b005'>
+              <div class="bk-img">
+                <div class="bk-wrapper">
+                  <div class="bk-book bk-bookdefault">
+                    <div class="bk-front">
+                      <div class="bk-cover" style="background-image: url('file:///Users/salimcansatici/Desktop/Kitap%20Resimleri/paralel-odalar-teorisi-pre.jpg')"></div>
+                    </div>
+                    <div class="bk-back"></div>
+                    <div class="bk-left"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="item-details">
+                <h3 class="book-item_title">Paralel Odalar Teorisi</h3>
+                <p class="author">@AysenurNazli &bull; 2015</p>
+                <p>Nihan, kendi açtığı ıssız ve engebeli patikada, tek başına yürüyen genç bir kadındı. İçedönük, asosyal ve kesinlikle uyumsuzdu.</p>
+                <a href="#" class="button ">Detaylar</a>
+              </div>
+
+              <div class="overlay-details">
+                <a href="#" class="close-overlay-btn">Kapat</a>
+                <div class="overlay-image">
+                  <img src="file:///Users/salimcansatici/Desktop/Kitap%20Resimleri/paralel-odalar-teorisi-ori.jpg" alt="Book Cover">
+                  <div class="back-color"></div>
+                </div>
+                <div class="overlay-desc activated">
+                  <h2 class="overlay_title">Paralel Odalar Teorisi</h2>
+                  <p class="author">@AysenurNazli</p>
+                  <p class="published">2015</p>
+                  <p class="synopsis">Nihan, kendi açtığı ıssız ve engebeli patikada, tek başına yürüyen genç bir kadındı. İçedönük, asosyal ve kesinlikle uyumsuzdu. İnsanlarla kolayca anlaşamıyor, onlar tarafından da kabul görmüyordu. Ve tüm bunlar, bir sonbahar gününde, onun evsiz kalmasına neden oldu. Şimdi elinde, başvurabileceği tek bir ev arkadaşlığı ilanı vardı.
+
+                    Teoman, ailesinin onun için çizdiği yoldan ayrılmış; yer edindiği kalabalık bir caddede, arkadaşları ve çevresiyle yürüyen genç bir adamdı. Dışadönük, sosyal ve kesinlikle gelenekselciydi. Ve geleneklerden koptuğu o tek anda, kendini evlatlıktan reddedilmiş ve parasız kalmış olarak buldu. Şimdi tek çaresi bir ev arkadaşı bulmaktı. 
+                    
+                   </p>
+                  <a href="#" class="button">Oku</a>
+                </div>
+                
+              </div>
+              
+            </li>
+
+            <li class="book-item small-12 medium-6 columns" data-groups='["fantastik"]' data-date-created='2014' data-title='Aima' data-color='#a9afad'>
+              <div class="bk-img">
+                <div class="bk-wrapper">
+                  <div class="bk-book bk-bookdefault">
+                    <div class="bk-front">
+                      <div class="bk-cover" style="background-image: url('file:///Users/salimcansatici/Desktop/Kitap%20Resimleri/aima-pre.jpg')"></div>
+                    </div>
+                    <div class="bk-back"></div>
+                    <div class="bk-left"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="item-details">
+                <h3 class="book-item_title">Aima</h3>
+                <p class="author">@nychtalydia &bull; 2014</p>
+                <p>6 Eylül 2005 
+                  Cinayet gecesi/ kayıp 4 yıl 
+                  
+                  5 Nisan 2018
+                  Kim Yerim: Kayıp
+                  Park Jimin kim?</p>
+                <a href="#" class="button ">Detaylar</a>
+              </div>
+
+              <div class="overlay-details">
+                <a href="#" class="close-overlay-btn">Kapat</a>
+                <div class="overlay-image">
+                  <img src="file:///Users/salimcansatici/Desktop/Kitap%20Resimleri/aima-ori.jpg" alt="Book Cover">
+                  <div class="back-color"></div>
+                </div>
+                <div class="overlay-desc activated">
+                  <h2 class="overlay_title">Aima</h2>
+                  <p class="author">@nychtalydia</p>
+                  <p class="published">2014</p>
+                  <p class="synopsis">6 Eylül 2005 
+                    Cinayet gecesi/ kayıp 4 yıl 
+                    
+                    5 Nisan 2018
+                    Kim Yerim: Kayıp
+                    Park Jimin kim?</p>
+                  <a href="#" class="button">Detaylar</a>
+                </div>
+                
       
-    </div>
-  </div>
-  
-  <div class="responsive">
-    <div class="gallery">
-            <a target="_self" href="#">
-        <img src="https://a.wattpad.com/cover/32496627-288-k273134.jpg" alt="Northern Lights" width="600" height="400">
-      </a>
+            </li>
+
+           
+
+           
+
+
+            <li class="book-item small-12 medium-6 columns" data-groups='["bilimkurgu","fantastik"]' data-date-created='2016' data-title="Yeşil Prenses Yükseliş" data-color='#658539'>
+              <div class="bk-img">
+                <div class="bk-wrapper">
+                  <div class="bk-book bk-bookdefault">
+                    <div class="bk-front">
+                      <div class="bk-cover" style="background-image: url('file:///Users/salimcansatici/Desktop/Kitap%20Resimleri/yesil-prenses-yukselis-pre.jpg')"></div>
+                    </div>
+                    <div class="bk-back"></div>
+                    <div class="bk-left"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="item-details">
+                <h3 class="book-item_title">Yeşil Prenses Yükseliş</h3>
+                <p class="author">@nursu_cugalir &bull; 2016</p>
+                <p>Adına dünya denen bu yerde hiçbir zaman eşitlik olmadı. Her zaman birileri ezildi, birileri sayıldı. 
+                  Ama bu seferki fazla acımasızdı. </p>
+                <a href="#" class="button ">Detaylar</a>
+              </div>
+
+              <div class="overlay-details">
+                <a href="#" class="close-overlay-btn">Kapat</a>
+                <div class="overlay-image">
+                  <img src="file:///Users/salimcansatici/Desktop/Kitap%20Resimleri/yesil-prenses-yukselis-ori.jpg" alt="Book Cover">
+                  <div class="back-color"></div>
+                </div>
+                <div class="overlay-desc activated">
+                  <h2 class="overlay_title">Yeşil Prenses Yükseliş</h2>
+                  <p class="author">@nursu_cugalir</p>
+                  <p class="published">2016</p>
+                  <p class="synopsis">Adına dünya denen bu yerde hiçbir zaman eşitlik olmadı. Her zaman birileri ezildi, birileri sayıldı. 
+                    
+                                          
+                    Küçük ve kasvetli bir kasabanın sıradan bir evinde yaşayan bir köle Darya'yı, ülkenin kudretli ve genç kralı Lev, hırsızlıkla suçladı. 
+                    Onu sarayına aldı, kabalığını kullandı. 
+                    Ancak yıllarca saklanan onca sır, Darya'nın peşini bırakmadı, kovaladı. 
+                    Kendisi, olduğu gibi biri değildi, olmak istediği kişi de değildi. 
+                    O da, tüm olanları kabul etmeye başladı. 
+                    Hayatta ne kadar acımasız olursa o kadar iş başaracağını anladı.
+                    Bu hikaye, tamamıyla onun kavgasıydı. </p>
+                  <a href="#" class="button">Oku</a>
+                </div>
+                
+            </li>
+
+      </section>
 
     </div>
+
+    <!-- Footer Content --><img style="width:100%;" id="image" src="http://wattcat.com/img/mor-bas.png">
+    <footer id="footer" class="page-footer">
+      <div class="row footer-wrapper">
+        
+      </div>
+    </footer>
+
   </div>
-  
-  <div class="responsive">
-    <div class="gallery">
-            <a target="_self" href="#">
-        <img src="https://a.wattpad.com/cover/158082659-288-k931908.jpg" alt="Mountains" width="600" height="400">
-      </a>
-   
-    </div>
-  </div>
-  
-  <div class="clearfix"></div>
-  
-  <div style="padding:6px;">
-    <p>Popülarite listesi günlük okunma oy ve yorum sayısının belli bir algoritmasına göre seçilmektedir.</p>
-  </div>
-  
-  <div class="header">
-    <br>    
+  <!-- /main -->
+
+  <div class="main-overlay">
+    <div class="overlay-full"></div>
   </div>
 
-
-
-  <h4>Yeni Çıkan Kitaplar</h4>
-  <p> </p>
-  <div class="responsive">
-    <div class="gallery">
-            <a target="_self" href="#">
-        <img src="https://a.wattpad.com/cover/172847506-288-k380038.jpg" alt="Cinque Terre" width="400" height="400">
-      </a>
-
-    </div>
-  </div>
-  
-  
-  <div class="responsive">
-    <div class="gallery">
-            <a target="_self" href="#">
-        <img src="https://a.wattpad.com/cover/99487887-288-k411663.jpg" alt="Forest" width="600" height="400">
-      </a>
-      
-    </div>
-  </div>
-  
-  <div class="responsive">
-    <div class="gallery">
-            <a target="_self" href="#">
-        <img src="https://a.wattpad.com/cover/167982415-288-k628290.jpg" alt="Northern Lights" width="600" height="400">
-      </a>
-
-    </div>
-  </div>
-  
-  <div class="responsive">
-    <div class="gallery">
-            <a target="_self" href="#">
-        <img src="https://a.wattpad.com/cover/132881821-288-k682802.jpg" alt="Mountains" width="600" height="400">
-      </a>
-   
-    </div>
-  </div>
-  
-  <div class="clearfix"></div>
-  
-  <div style="padding:6px;">
-    <p>Popülarite listesi günlük okunma oy ve yorum sayısının belli bir algoritmasına göre seçilmektedir.</p>
-  </div>
-  
-
-
-
-
-
-
-
-
-
-  
 </div>
+<!-- /main-container -->
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Shuffle/4.0.0/shuffle.min.js'></script>
 
-</div>            <br>            <br>
+  
+
+    <script  src="http://wattcat.com/css/index.js"></script>
+
+
 
 
 </body>
+
 </html>
