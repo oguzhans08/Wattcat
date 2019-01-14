@@ -1,7 +1,7 @@
 $(document).ready(function(){
   function notlariListele(param) {
       var httpistegi = new XMLHttpRequest();
-      var adres = "http://wattcat.com/json/aima/One.json";
+      var adres = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/json/Aima/1.json";
     
     
       httpistegi.onreadystatechange = function() {
