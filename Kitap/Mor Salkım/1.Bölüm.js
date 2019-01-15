@@ -1,7 +1,7 @@
 $(document).ready(function(){
   function notlariListele(param) {
       var httpistegi = new XMLHttpRequest();
-      var adres = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/json/Aima/1.json";
+      var adres = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/json/Mor%20Salk%C4%B1m/1.json";
     
     
       httpistegi.onreadystatechange = function() {
