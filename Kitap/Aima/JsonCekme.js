@@ -1,7 +1,7 @@
 $(document).ready(function(){
   function notlariListele(param) {
       var httpistegi = new XMLHttpRequest();
-      var adres = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/kitap.json";
+      var adres = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/KitapBolumleri.json";
     
     
       httpistegi.onreadystatechange = function() {
@@ -22,7 +22,7 @@ $(document).ready(function(){
 
 function notlariListele2(param) {
   var httpistegi2 = new XMLHttpRequest();
-  var adres2 = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/kitap.json";
+  var adres2 = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/KitapBolumleri.json";
 
 
   httpistegi2.onreadystatechange = function() {
@@ -43,7 +43,7 @@ notlariListele2();
 
 function notlariListele3(param) {
   var httpistegi3 = new XMLHttpRequest();
-  var adres3 = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/kitap.json";
+  var adres3 = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/KitapBolumleri.json";
 
 
   httpistegi3.onreadystatechange = function() {
@@ -64,7 +64,7 @@ notlariListele3();
 
 function notlariListele4(param) {
   var httpistegi4 = new XMLHttpRequest();
-  var adres4 = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/kitap.json";
+  var adres4 = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/KitapBolumleri.json";
 
 
   httpistegi4.onreadystatechange = function() {
@@ -84,7 +84,7 @@ notlariListele4();
 
 function notlariListele5(param) {
   var httpistegi5 = new XMLHttpRequest();
-  var adres5 = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/kitap.json";
+  var adres5 = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/KitapBolumleri.json";
 
 
   httpistegi5.onreadystatechange = function() {
