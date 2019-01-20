@@ -240,13 +240,6 @@ notlariListele11();
 
 
 
-
-
-
-
-
-
-
 function notlariListele12(param) {
   var httpistegi12 = new XMLHttpRequest();
   var adres12 = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/KitapBolumleri.json";
@@ -268,25 +261,11 @@ function notlariListele12(param) {
 notlariListele12();
 
 
-function notlariListele13(param) {
-  var httpistegi13 = new XMLHttpRequest();
-  var adres13 = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/KitapBolumleri.json";
 
 
-  httpistegi13.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      var myArr = JSON.parse(this.responseText);
-      var css_listele13 = document.querySelector(".MorSalkim2");
-     
-        css_listele13.innerHTML += '<div class="MorSalkim2">' + myArr[12].MorSalkim2 + '</div>';
-     
-    }
-  };
-  httpistegi13.open("GET", adres13, true);
-  httpistegi13.send();
-}
 
-notlariListele13();
+
+
 
 
 
@@ -451,3 +430,4 @@ $('.cb-value').click(function() {
           
           }
 })
+
