@@ -1,7 +1,4 @@
 
-
-
-
 $(document).ready(function(){
   function notlariListele(param) {
       var httpistegi = new XMLHttpRequest();
@@ -359,46 +356,46 @@ function notlariListele16(param) {
 notlariListele16();
 
 
-function notlariListele12(param) {
-  var httpistegi12 = new XMLHttpRequest();
-  var adres12 = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/KitapBolumleri.json";
+function notlariListele17(param) {
+  var httpistegi17 = new XMLHttpRequest();
+  var adres17 = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/KitapBolumleri.json";
 
 
-  httpistegi12.onreadystatechange = function() {
+  httpistegi17.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var myArr = JSON.parse(this.responseText);
-      var css_listele12 = document.querySelector(".Nazenin1");
+      var css_listele17 = document.querySelector(".Nazenin1");
      
-        css_listele12.innerHTML += '<div class="Nazenin1">' + myArr[16].Nazenin1 + '</div>';
+        css_listele17.innerHTML += '<div class="Nazenin1">' + myArr[16].Nazenin1 + '</div>';
      
     }
   };
-  httpistegi12.open("GET", adres12, true);
-  httpistegi12.send();
+  httpistegi17.open("GET", adres17, true);
+  httpistegi17.send();
 }
 
-notlariListele12();
+notlariListele17();
 
 
-function notlariListele13(param) {
-  var httpistegi13 = new XMLHttpRequest();
-  var adres13 = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/KitapBolumleri.json";
+function notlariListele18(param) {
+  var httpistegi18 = new XMLHttpRequest();
+  var adres18 = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/KitapBolumleri.json";
 
 
-  httpistegi13.onreadystatechange = function() {
+  httpistegi18.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var myArr = JSON.parse(this.responseText);
-      var css_listele13 = document.querySelector(".Nazenin2");
+      var css_listele18 = document.querySelector(".Nazenin2");
      
-        css_listele13.innerHTML += '<div class="Nazenin2">' + myArr[17].Nazenin2 + '</div>';
+        css_listele18.innerHTML += '<div class="Nazenin2">' + myArr[17].Nazenin2 + '</div>';
      
     }
   };
-  httpistegi13.open("GET", adres13, true);
-  httpistegi13.send();
+  httpistegi18.open("GET", adres18, true);
+  httpistegi18.send();
 }
 
-notlariListele13();
+notlariListele18();
 
 //$('input.cb-value').prop("checked", true);
 $('.cb-value').click(function() {
