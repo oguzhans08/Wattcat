@@ -65,8 +65,6 @@ notlariListele3();
 function notlariListele4(param) {
   var httpistegi4 = new XMLHttpRequest();
   var adres4 = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/KitapBolumleri.json";
-
-
   httpistegi4.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var myArr = JSON.parse(this.responseText);
@@ -81,6 +79,12 @@ function notlariListele4(param) {
 }
 
 notlariListele4();
+
+
+
+
+
+
 
 function notlariListele5(param) {
   var httpistegi5 = new XMLHttpRequest();
