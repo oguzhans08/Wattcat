@@ -375,22 +375,23 @@ function notlariListele12(param) {
 
 notlariListele12();
 
-function notlariListele12(param) {
-  var httpistegi12 = new XMLHttpRequest();
-  var adres12 = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/KitapBolumleri.json";
+
+function notlariListele13(param) {
+  var httpistegi13 = new XMLHttpRequest();
+  var adres13 = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/KitapBolumleri.json";
 
 
-  httpistegi12.onreadystatechange = function() {
+  httpistegi13.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var myArr = JSON.parse(this.responseText);
-      var css_listele12 = document.querySelector(".Nazenin2");
+      var css_listele13 = document.querySelector(".Nazenin2");
      
-        css_listele12.innerHTML += '<div class="Nazenin2">' + myArr[17].Nazenin2 + '</div>';
+        css_listele13.innerHTML += '<div class="Nazenin2">' + myArr[17].Nazenin2 + '</div>';
      
     }
   };
-  httpistegi12.open("GET", adres12, true);
-  httpistegi12.send();
+  httpistegi13.open("GET", adres13, true);
+  httpistegi13.send();
 }
 
-notlariListele12();
+notlariListele13();
