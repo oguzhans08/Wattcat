@@ -395,3 +395,59 @@ function notlariListele13(param) {
 }
 
 notlariListele13();
+
+//$('input.cb-value').prop("checked", true);
+$('.cb-value').click(function() {
+  var mainParent = $(this).parent('.toggle-btn');
+  if($(mainParent).find('input.cb-value').is(':checked')) {
+    $(mainParent).addClass('active');
+  } else {
+    $(mainParent).removeClass('active');
+    
+  }
+ var x = document.getElementById("myDIV");
+                if (x.style.display === "none") {
+                  x.style.display = "block";
+                } else {
+                  x.style.display = "none";
+              
+              }
+              var x = document.getElementById("myDIV2");
+           
+                if (x.style.display === "none") 
+                
+                {
+
+                  x.style.display = "block";
+                } 
+                
+                else {
+
+                  x.style.display = "none";
+              
+              } 
+
+
+
+              var x = document.getElementById("myDIV3");
+                if (x.style.display === "none") {
+                  x.style.display = "block";
+                } else {
+                  x.style.display = "none";
+              
+              }
+              var x = document.getElementById("myDIV4");
+              if (x.style.display === "none") {
+                x.style.display = "block";
+              } else {
+                x.style.display = "none";
+            
+            }
+            var x = document.getElementById("myDIV5");
+            if (x.style.display === "none") {
+              x.style.display = "block";
+            } else {
+              x.style.display = "none";
+          
+          }
+})
