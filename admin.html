@@ -135,72 +135,85 @@
         
                 <div class="kagit" style="">
                     
-                        <br><br>   <br><br>
+                        <br><br>   
                         
                       
 
-        <br><br>
-        <br>
         
 
 
 
-                        <font color="black" style=" -ms-word-break: normal;  word-wrap: break-word;">
                          
-                           
-                            <div class="ayar">
-                                <div class="yazi">Varsayılan Font</div>
-                                <select name="font_sec" id="font_sec">
-                                    <option value="TMSans">Default (TM Sans)</option>
-                                    <option value="Aleo">Aleo</option>
-                                    <option value="Quicksand">Quicksand</option>
-                                    <option value="Coiny">Coiny</option>
-                                    <option value="Titillium Web">Titillium Web</option>
-                                    <option value="Noto Sans">Noto Sans</option>
-                                    <option value="Open Sans">Open Sans</option>
-                                    <option value="Montserrat">Montserrat</option>
-                                </select>
                             </div>
+                         
+                            <div class="row">
+                                   
+
+
+
+                                        
+                             
+                                    <div class="col-sm-4">
+                                            <div class="ayar">
+                                                    <div class="yazi">Ana Kısım Fontlarını Değiştir</div>
+                                                    <select name="font_sec" id="font_sec">
+                                                        <option value="TMSans">Default (TM Sans)</option>
+                                                        <option value="Montserrat">Montserrat</option>
+                                                    </select>
+                                                </div>
+
+                                    </div>
+
+
+                                    <div class="col-sm-4">
+
+
+                                    </div>
+                                  
+
+
         
                 
-                            <h2 id="istatistik">İstatistikler</h2>
+                     
                             <div class="bolum2" >
                                     <div class="ayar">
                                         <div class="yazi">Kitapların Toplam Okunma Sayısı</div>
                                         <div class="istatistikler" id="tiklanma_sayisi"></div>
                                         <div class="tiklanma_sayimiz" id="tiklanma_sayimiz"></div>
                                     </div>
+                                  
+
+
                                     
-                                    
+
+
+
+                                       
+
+
                             </div>
         
                     </div>
                     <br><br><br>
                          
-                        </font>
+               
         
             
                     </div>
         
         
         <script>
-        
-  // fontDegistir Başla
-  var font_sec = document.querySelector("#font_sec");
-    font_sec.addEventListener("change",function(){
-      localStorage.setItem("font_secimi",this.value);
-      $("*").css("font-family", localStorage.getItem("font_secimi"));
-    });
+      
+ // fontDegistir Başla
+ var font_sec = document.querySelector("#font_sec");
+      font_sec.addEventListener("change",function(){
+        localStorage.setItem("font_secimi",this.value);
+        $("*").css("font-family", localStorage.getItem("font_secimi"));
+      });
 
-    $("*").not("i").css("font-family", localStorage.getItem("font_secimi"));
-    font_sec.value = localStorage.getItem("font_secimi");
-    // fontDegistir Bitiş
-
-
-
-// fontFamily için
-   $("*").not("i").css("font-family", localStorage.getItem("font_secimi"));
-
+      $("*").not("i").css("font-family", localStorage.getItem("font_secimi"));
+      font_sec.value = localStorage.getItem("font_secimi");
+      // fontDegistir Bitiş
 
     tiklanma_sayisi.innerText = localStorage.getItem("tiklanma_sayimiz");
 

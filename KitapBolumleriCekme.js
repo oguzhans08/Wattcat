@@ -1,5 +1,5 @@
 
-$(document).ready(function(){
+
   function notlariListele(param) {
       var httpistegi = new XMLHttpRequest();
       var adres = "https://raw.githubusercontent.com/salimcansatici/Wattcat/master/KitapBolumleri.json";
@@ -19,7 +19,7 @@ $(document).ready(function(){
     }
   
     notlariListele();
-});
+
 
 function notlariListele2(param) {
   var httpistegi2 = new XMLHttpRequest();
@@ -475,5 +475,3 @@ function myFunction() {
  // tıklanmaSayısı bitiş
 
 
-// fontFamily için
-$("*").not("i").css("font-family", localStorage.getItem("font_secimi"));

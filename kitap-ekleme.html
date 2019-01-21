@@ -305,17 +305,19 @@
         <div class="row">
                 <div class="column">
 
-                        <img src="..." alt="..." class="img-thumbnail"> <!-- kitap resmi 150x215 piksel  -->   
+                        <input type="text" id="kapak_resmi" placeholder="Kapak Resmi URL'si girin...">
 
 
                         <br><br>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"><br> <!-- Kitap adı -->   
-
-                      
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> <!-- Kitap İçeriği ekleme -->   
+                        <input type="email" class="form-control" id="kitap_baslik" placeholder="Kitabınızın Başlığını Girin"><br> <!-- Kitap adı -->   
+                        <input type="text" id="kitap_yazar" placeholder="Yazar Adı">
+                        <input type="text" id="ilk_icerik" placeholder="ilk içerik">
+                        <input type="text" id="ikinci_icerik" placeholder="ikinci içerik">
+                        <input type="text" id="yayinlanma_tarihi" placeholder="yayınlanma tarihi">
+                        <textarea class="form-control" id="kitap_icerik" rows="3" placeholder="kitabınızı yazın"></textarea> <!-- Kitap İçeriği ekleme -->   
                 <br>
                      
-                        <button type="submit" class="btn btn-primary mb-2">Kaydet</button> <!-- Kaydet -->   
+                        <a class="btn btn-primary mb-2" id="kitap_kaydet">Kaydet</a> <!-- Kaydet -->   
 
 
                                     
@@ -328,6 +330,32 @@
 
 </div>            <br>            <br>
 
+<script>
+  window.onload = function(){
 
+
+var eklenen_kitap = "";
+var kitap_kaydet = document.querySelector("#kitap_kaydet");
+var kitap_resmi = document.querySelector("#kitap_resmi");
+
+kitap_kaydet.onclick =  function(){
+  var kapak_resmi = document.querySelector("#kapak_resmi").value;
+var kitap_baslik = document.querySelector("#kitap_baslik").value;
+var kitap_yazar = document.querySelector("#kitap_yazar").value;
+var kitap_icerik = document.querySelector("#kitap_icerik").value;
+var ilk_icerik = document.querySelector("#ilk_icerik").value;
+var ikinci_icerik = document.querySelector("#ikinci_icerik").value;
+var yayinlanma_tarihi = document.querySelector("#yayinlanma_tarihi").value;
+if(localStorage.getItem("ekledigimiz_kitap") == null)
+  eklenen_kitap = "<li class='book-item small-12 medium-6 columns' data-groups='['romantik','ya']' data-date-created='1954' data-title='Lord of the Flies' data-color='#db2e0f'> <div class='bk-img'> <div class='bk-wrapper'> <div class='bk-book bk-bookdefault'> <div class='bk-front'> <div class='bk-cover' style='background-image: url(\""+kapak_resmi+"\");'></div> </div> <div class='bk-back'></div> <div class='bk-left'></div> </div> </div> </div> <div class='item-details'> <h3 class='book-item_title'>"+kitap_baslik+"</h3> <p class='author'>"+kitap_yazar+"</p> <p>"+ilk_icerik+" </p> <div id='myDIV4'> <button type='button' class='btnbtn-infobtn-lg' data-toggle='modal' data-target='#test4'>Modal Görünümünde Oku! </button> </div> <a href='#' class='button '>Detaylar</a> </div> <div class='overlay-details'> <a href='#' class='close-overlay-btn'>Close</a> <div class='overlay-image'> <img src='"+kitap_resmi+"' alt='Book Cover'> <div class='back-color'></div> </div> <div class='overlay-desc activated'> <h2 class='overlay_title'>"+kitap_baslik+"</h2> <p class='author'>"+kitap_yazar+"</p> <p class='published'>"+yayinlanma_tarihi+"</p> <p class='synopsis'>"+ikinci_icerik+"</p> <a href='./kitap/Kor Heves/1.Bölüm.html' class='button'>Oku</a> </div> </li>";
+else
+eklenen_kitap =localStorage.getItem("ekledigimiz_kitap") + "<li class='book-item small-12 medium-6 columns' data-groups='['romantik','ya']' data-date-created='1954' data-title='Lord of the Flies' data-color='#db2e0f'> <div class='bk-img'> <div class='bk-wrapper'> <div class='bk-book bk-bookdefault'> <div class='bk-front'> <div class='bk-cover' style='background-image: url(\""+kapak_resmi+"\");'></div> </div> <div class='bk-back'></div> <div class='bk-left'></div> </div> </div> </div> <div class='item-details'> <h3 class='book-item_title'>"+kitap_baslik+"</h3> <p class='author'>"+kitap_yazar+"</p> <p>"+ilk_icerik+" </p> <div id='myDIV4'> <button type='button' class='btnbtn-infobtn-lg' data-toggle='modal' data-target='#test4'>Modal Görünümünde Oku! </button> </div> <a href='#' class='button '>Detaylar</a> </div> <div class='overlay-details'> <a href='#' class='close-overlay-btn'>Close</a> <div class='overlay-image'> <img src='"+kitap_resmi+"' alt='Book Cover'> <div class='back-color'></div> </div> <div class='overlay-desc activated'> <h2 class='overlay_title'>"+kitap_baslik+"</h2> <p class='author'>"+kitap_yazar+"</p> <p class='published'>"+yayinlanma_tarihi+"</p> <p class='synopsis'>"+ikinci_icerik+"</p> <a href='./kitap/Kor Heves/1.Bölüm.html' class='button'>Oku</a> </div> </li>";
+
+  localStorage.setItem("ekledigimiz_kitap",eklenen_kitap);
+  }
+
+}
+
+</script>
 </body>
 </html>
