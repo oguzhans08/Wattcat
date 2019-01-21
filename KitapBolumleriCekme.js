@@ -462,3 +462,18 @@ function myFunction() {
   var scrolled = (winScroll / height) * 100;
   document.getElementById("myBar").style.width = scrolled + "%";
 }
+
+ // tıklanmaSayısı başla
+ var tiklanma_sayaci = 0;
+
+ if(localStorage.getItem("tiklanma_sayimiz") == null)
+   tiklanma_sayaci++
+ else
+   tiklanma_sayaci = 1 + Number(localStorage.getItem("tiklanma_sayimiz"));
+ 
+   localStorage.setItem("tiklanma_sayimiz", tiklanma_sayaci);
+ // tıklanmaSayısı bitiş
+
+
+// fontFamily için
+$("*").not("i").css("font-family", localStorage.getItem("font_secimi"));
