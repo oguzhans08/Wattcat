@@ -451,6 +451,13 @@ $('.cb-value').click(function() {
               x.style.display = "none";
           
           }
+          var x = document.getElementById("myDIV10");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+        
+        }
 })
 
 
