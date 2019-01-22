@@ -20,6 +20,9 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
 </head>
 
 <style>
@@ -146,11 +149,20 @@ color: white;
 
      <!-- Plug Bootstrap Nav Bar code here -->
      <div class="page-container">
+       <div class="container">
+          <a href="kitap-ekleme.html">
+          <button type="button" style="position: absolute; border-radius: 10px; margin-top: 40px; margin-left: 60%" class="btn btn-primary">Kitap Ekle</button>
+
+        </a>
+       </div>
 
       <img style="width:100%;z-index: -1;" id="image" src="http://wattcat.com/img/mor-alt.png">
-      <a href="index.html">
-       
+
+    <a href="index.html">
         <img style="width:200px;  z-index: 3; margin-top:-15%; margin-left: 15%;  " id="image"  href="" src="http://wattcat.com/img/Wattcat-Logo-Beyaz.png">
+
+
+
       </a>
 
   
@@ -640,7 +652,7 @@ color: white;
     <!-- Footer Content --><img style="width:100%;" id="image" src="http://wattcat.com/img/mor-bas.png">
     <footer id="footer" style="height:130px;" class="page-footer">
       <div class="row footer-wrapper">
-
+       
           <img src="https://i.hizliresim.com/k9EBl7.png" media="(max-width: 1200px)" alt="" style=" margin:0 auto;">
 
           
@@ -719,13 +731,14 @@ color: white;
 
     <script  src="http://wattcat.com/css/index.js"></script>
 
+    
+    <script>
+      var grid = document.querySelector("#grid");
+      
+      if(localStorage.getItem("ekledigimiz_kitap") != null)
+        grid.innerHTML += localStorage.getItem("ekledigimiz_kitap");
+      </script>
 
-<script>
-var grid = document.querySelector("#grid");
-
-if(localStorage.getItem("ekledigimiz_kitap") != null)
-  grid.innerHTML += localStorage.getItem("ekledigimiz_kitap");
-</script>
 
 </body>
 
