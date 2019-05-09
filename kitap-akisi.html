@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kitap Akışı</title>
+    <script type="text/javascript" src="/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">  
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Shuffle/4.0.0/shuffle.min.js'></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.css'>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+</head>
+
+<style>
+  .progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #4caf50;
+  width: 0%;
+}
+
+
+  .btnbtn-infobtn-lg{
+background-color: rgb(255, 188, 91);
+font-weight: 600;
+float: right;
+height: 35px;
+width: 220px;
+border-radius: 10px;
+color: white;
+
+  }
+.toggle-btn {
+  width: 80px;
+  height: 40px;
+  margin: 10px;
+  border-radius: 50px;
+  display: inline-block;
+  position: relative;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAyklEQVQ4T42TaxHCQAyENw5wAhLACVUAUkABOCkSwEkdhNmbpHNckzv689L98toIAKjqGcAFwElEFr5ln6ruAMwA7iLyFBM/TPDuQSrxwf6fCKBoX2UMIYGYkg8BLOnVg2RiAEexGaQQq4w9e9klcxGLLAUwgDAcihlYAR1IvZA1sz/+AAaQjXhTQQVoe2Yo3E7UQiT2ijeQdojRtClOfVKvMVyVpU594kZK9zzySWTlcNqZY9tjCsUds00+A57z1e35xzlzJjee8xf0HYp+cOZQUQAAAABJRU5ErkJggg==") no-repeat 50px center #e74c3c;
+  cursor: pointer;
+  float: right;
+  -webkit-transition: background-color .40s ease-in-out;
+  -moz-transition: background-color .40s ease-in-out;
+  -o-transition: background-color .40s ease-in-out;
+  transition: background-color .40s ease-in-out;
+  cursor: pointer;
+}
+.toggle-btn.active {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmUlEQVQ4T6WT0RWDMAhFeZs4ipu0mawZpaO4yevBc6hUIWLNd+4NeQDk5sE/PMkZwFvZywKSTxF5iUgH0C4JHGyF97IggFVSqyCFga0CvQSg70Mdwd8QSSr4sGBMcgavAgdvwQCtApvA2uKr1x7Pu++06ItrF5LXPB/CP4M0kKTwYRIDyRAOR9lJTuF0F0hOAJbKopVHOZN9ACS0UgowIx8ZAAAAAElFTkSuQmCC") no-repeat 10px center #2ecc71;
+}
+.toggle-btn.active .round-btn {
+  left: 45px;
+}
+.toggle-btn .round-btn {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  margin-top: -15px;
+  -webkit-transition: all .30s ease-in-out;
+  -moz-transition: all .30s ease-in-out;
+  -o-transition: all .30s ease-in-out;
+  transition: all .30s ease-in-out;
+}
+.toggle-btn .cb-value {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 9;
+  cursor: pointer;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+.modal.fade.in .lab-modal-body {
+  bottom: 0;
+  opacity: 1;
+  
+}
+
+.lab-modal-body h1 {
+  font-size: 4rem;
+}
+
+.lab-modal-body p {
+  margin: 0 0 1.62rem 0;
+  line-height: 1.62;
+  font-weight: 300;
+  font-size: 1.62rem;
+  color: #666;
+}
+
+.lab-modal-body {
+  position: relative;
+  bottom: -250px;
+  margin: 150px auto 0;
+  padding: 40px;
+  max-width: 60%;
+  height: auto;
+  background-color: rgb(248, 250, 247);
+  border: 1px solid #BEBEBE;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-out, bottom 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out, bottom 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out, bottom 0.3s ease-out;
+  transition: opacity 0.3s ease-out, bottom 0.3s ease-out;
+}
+
+.close {
+  margin-top: -20px;
+  margin-right: -20px;
+  text-shadow: 0 1px 0 #ffffff;
+}
+
+.popup-button {
+  margin-top: 70px;
+}
+
+
+</style>
+
+<body>
+
+
+     <!-- Plug Bootstrap Nav Bar code here -->
+     <div class="page-container">
+       <div class="container">
+          <a href="kitap-ekleme.html">
+          <button type="button" style="position: absolute; border-radius: 10px; margin-top: 40px; margin-left: 60%" class="btn btn-primary">Kitap Ekle</button>
+
+        </a>
+       </div>
+
+      <img style="width:100%;z-index: -1;" id="image" src="http://wattcat.com/img/mor-alt.png">
+
+    <a href="index.html">
+        <img style="width:200px;  z-index: 3; margin-top:-15%; margin-left: 15%;  " id="image"  href="" src="http://wattcat.com/img/Wattcat-Logo-Beyaz.png">
+
+
+
+      </a>
+
+  
+
+    </div>
+    
+     
+            <a class="navbar-brand" href="#">
+
+                <a href="index.html">
+                   </a>
+
+                    
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+      
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+         
+               
+                                
+                                </div>
+                                    
+             
+                </li>
+                
+         
+
+          </nav>    
+    
+
+    </a>
+  </nav>  
+  <div class="page-container">
+
+      <div class="page-title category-title">
+        <!-- <h1>Book Viewer</h1> -->
+      </div>
+
+      <section id="book_list">
+       
+   
+
+
+        <div class="toolbar row">
+            <h1>En Popüler Listesi</h1>
+            <div class="adılazimdegil" style="margin-left: 90%; margin-top:-60px;">
+           <div class="toggle-btn active">
+                  <input type="checkbox"  checked class="cb-value" />
+                   <span class="round-btn"></span>
+                  </div></div>
+          <div class="filter-options small-12 medium-9 columns">
+            <a href="#" class="filter-item active" data-group="all">Bütün Kategoriler</a>
+            <a href="#" class="filter-item" data-group="fantastik">Fantastik</a>
+            <a href="#" class="filter-item" data-group="bilimkurgu">Bilimkurgu</a>
+            <a href="#" class="filter-item" data-group="romantik">Romantik</a>
+            <a href="#" class="filter-item" data-group="mizah">Mizah</a>
+            <a href="#" class="filter-item" data-group="ya">Y.A</a>
+          </div>
+
+          <div class="small-12 medium-3 columns">
+            
+            <select class="sort-options">
+      
+            <option value="" disabled selected>Sırala</option>
+            <option value="" >Önerilen</option>
+            <option value="title">Alfabetik</option>
+            <option value="date-created">Yayınlanma Tarihine Göre</option>
+            </select>
+          </div>
+        </div>
+     
+       
+          
+          
+          
+     <!-- Modal kısımlarım burada-->
+                         
+          
+        <div id="test1" class="modal fade" role="dialog" style="z-index: 1400;">
+            <div class="modal-dialog">
+              <!-- Modal content-->
+              <div class="modal-content">
+   
+                <div class="modal-body">
+                    <div class="Nazenin1"></div>
+                    <div class="Nazenin2"></div>
+                </div>      
+              </div>
+            </div>
+          </div>
+          <div id="test2" class="modal fade" role="dialog" style="z-index: 1600;">
+              <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+               
+                  <div class="modal-body">
+                    
+                      <div class="MorSalkim1"></div>
+
+                      <div class="MorSalkim2"></div>
+    
+                        <div class="MorSalkim3"></div>
+                        
+                          <div class="MorSalkim4"></div>
+                          <div class="MorSalkim5"></div>
+                    
+                  </div>      
+                </div>
+              </div>
+            </div>
+            <div id="test3" class="modal fade" role="dialog" style="z-index: 2100;">
+                <div class="modal-dialog">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+              
+                    <div class="modal-body">
+                      
+             
+                        <div class="BirSemteVurduGece1"></div>
+                        <div class="BirSemteVurduGece2"></div>
+                        <div class="BirSemteVurduGece3"></div>
+                        <div class="BirSemteVurduGece4"></div>
+                    </div>      
+                  </div>
+                </div>
+              </div>
+              <div id="test4" class="modal fade" role="dialog" style="z-index: 2400;">
+                  <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      
+                      <div class="modal-body">
+                        
+                        
+                      <div class="KorHeves1"></div>
+                      <div class="KorHeves2"></div>
+                    
+                      </div>      
+                    </div>
+                  </div>
+                </div>
+                  
+                <div id="test5" class="modal fade" role="dialog" style="z-index: 1400;">
+                    <div class="modal-dialog">
+                      <!-- Modal content-->
+                      <div class="modal-content">
+           
+                        <div class="modal-body">
+                            <div class="kitapveri"></div>
+                            <div class="listele"></div>
+                        </div>      
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div id="test10" class="modal fade" role="dialog" style="z-index: 2400;">
+                    <div class="modal-dialog">
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        
+                        <div class="modal-body">
+                   wefwf
+
+                          </div>
+                          
+                     
+                      
+                        </div>      
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+                        
+        <div class="grid-shuffle">
+          <ul id="grid" class="row">
+
+            
+
+
+            <li class="book-item small-12 medium-6 columns" data-groups='["romantik"]' data-date-created='2017' data-title='Nazenin' data-color='#0000FF'>
+              <div class="bk-img">
+                <div class="bk-wrapper">
+                  <div class="bk-book bk-bookdefault">
+                    <div class="bk-front">
+                      <div class="bk-cover" style="background-image: url('http://wattcat.com/img/Nazenin-pre.jpg');"></div>
+                    </div>
+                    <div class="bk-back"></div>
+                    <div class="bk-left"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="item-details">
+                <h3 class="book-item_title">Nazenin</h3>
+                <p class="author">Salimcan Satıcı &bull; 2017</p>
+                <p>#dexilkromanim (2017) adlı yarışmanın birincisi.
+                    Nazenin; İzmir'in güzüne kalmış menekşeler ile süslü, tatlı mı tatlı bir sevdanın masalı.</p>
+
+<!-- lanol-->
+
+<div id="myDIV">
+
+    <button type="button"  class="btnbtn-infobtn-lg" data-toggle="modal" data-target="#test1">Modal Görünümünde Oku! </button>
+
+
+    
+  
+  </div>
+
+  
+    <a href="#" class="button">Detaylar</a>  </div>
+
+               
+            
+
+              <div class="overlay-details">
+                <a href="#" class="close-overlay-btn">Close</a>
+                <div class="overlay-image">
+                  <img src="http://wattcat.com/img/Nazenin-ori.jpg" alt="Book Cover">
+                  <div class="back-color"></div>
+                </div>
+                <div class="overlay-desc activated">
+                  <h2 class="overlay_title">Nazenin</h2>
+                  <p class="author">@Tacdelen</p>
+                  <p class="published">2017</p>
+                  <p class="synopsis">#dexilkromanim (2017) adlı yarışmanın birincisi.
+                      Nazenin; İzmir'in güzüne kalmış menekşeler ile süslü, tatlı mı tatlı bir sevdanın masalı.  Taze dilli, bir o kadar da çekingen bir güldürü..
+                      Aşk üçgeninin açılarını hesaplayacak kadar zeki olan bir genç adamın hüznü ile dolu..
+                      Gizemli kadını, tehlike kokulu..
+                      Dahası, maceralar ile dolu bir kitaptır.</p>
+                  <a href="./Kitap/Nazenin/1.Bölüm.html" class="button">Oku</a>
+                </div>
+                
+              </div>
+            </li>
+
+            <li class="book-item small-12 medium-6 columns" data-groups='["romantik"]' data-date-created='1951' data-title='Mor Salkim' data-color='#009c8b'>
+              <div class="bk-img">
+                <div class="bk-wrapper">
+                  <div class="bk-book bk-bookdefault">
+                    <div class="bk-front">
+                      <div class="bk-cover" style="background-image: url('http://wattcat.com/img/morsalkim-pre.jpg')"></div>
+                    </div>
+                    <div class="bk-back"></div>
+                    <div class="bk-left"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="item-details">
+                <h3 class="book-item_title">Mor Salkım</h3>
+                <p class="author">@Dimpledgirll &bull; 2017</p>
+                <p>"Elbet bir gün mor, beyaza dönüşecekti."</p>
+
+                <!-- lanol-->
+                
+                
+                
+<div id="myDIV2">
+<!-- Button trigger modal -->
+
+  
+<button type="button" class="btnbtn-infobtn-lg"  data-toggle="modal"      data-target="#test2">Modal Görünümünde Oku!</button>
+
+
+
+</button>
+
+  
+  
+  
+  </div>
+
+    
+    <a href="#" class="button ">Detaylar</a>  </div>
+
+
+              <div class="overlay-details">
+                <a href="#" class="close-overlay-btn">Kapat</a>
+                <div class="overlay-image">
+                  <img src="http://wattcat.com/img/morsalkim-ori.jpg" alt="Book Cover">
+                  <div class="back-color"></div>
+                </div>
+                <div class="overlay-desc activated">
+                  <h2 class="overlay_title">Mor Salkım</h2>
+                  <p class="author">@Dimpledgirll</p>
+                  <p class="published">2017</p>
+                  <p class="synopsis">İstemediği şeyleri yapmak zorunda kalan bir kız. Masum değildi, kendini ezdiren biri hiç değildi.
+
+                    Siz ne için her şeyinizi feda ederdiniz?
+                    
+                    Yapmak istemediğiniz fakat yapmak zorunda kaldığınız şey ne için olabilirdi? 
+                    
+                    Her şeyin başladığı nokta, her şeyin biteceği nokta olabilir miydi? 
+                    
+                    Peki olaylar nasıl başlayacak, nasıl gelişecek ve nasıl bitecek?
+                    
+                    "Elbet bir gün mor, beyaza dönüşecekti."</p>
+                  <a href="./Kitap/Mor Salkım/1.Bölüm.html" class="button">Oku</a>
+                </div>
+
+            </li>
+
+            <li class="book-item small-12 medium-6 columns" data-groups='["romantik"]' data-date-created='2018' data-title='2018' data-color='#9c9688'>
+              <div class="bk-img">
+                <div class="bk-wrapper">
+                  <div class="bk-book bk-bookdefault">
+                    <div class="bk-front">
+                      <div class="bk-cover" style="background-image: url('http://wattcat.com/img/bir-semte-vurdu-gece-pre.jpg')"></div>
+                    </div>
+                    <div class="bk-back"></div>
+                    <div class="bk-left"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="item-details">
+                <h3 class="book-item_title">Bir Semte Vurdu Gece</h3>
+                <p class="author">@asilyezza &bull; 2018</p>
+                <p>Eğer bedenime bir çizik atsaydım, kuşkusuz ki o çizik benim kaderim olurdu. Çünkü biliyordum, ben dikiş tutmayan bir yaraydım. 
+                  Ben kaderi kanayan bir yaraydım.
+                  Ben küçük bir kesikte son bulan bir yaranın anısına ithaftım.</p>
+
+                  <!-- lanol-->
+                  <div id="myDIV3">
+                      <button type="button"  class="btnbtn-infobtn-lg" data-toggle="modal" data-target="#test3">Modal Görünümünde Oku! </button>
+
+                  </div>
+                      <a href="#" class="button ">Detaylar</a>  
+            
+                
+              </div>
+
+              <div class="overlay-details">
+                <a href="#" class="close-overlay-btn">Kapat</a>
+                <div class="overlay-image">
+                  <img src="http://wattcat.com/img/bir-semte-vurdu-gece-ori.jpg" alt="Book Cover">
+                  <div class="back-color"></div>
+                </div>
+                <div class="overlay-desc activated">
+                  <h2 class="overlay_title">Bir Semte Vurdu Gece</h2>
+                  <p class="author">@asilyezza</p>
+                  <p class="published">2018</p>
+                  <p class="synopsis">"Göğüme,
+                    Göğsüme;
+                    sokul usulca."
+                    
+                    Eğer bedenime bir çizik atsaydım, kuşkusuz ki o çizik benim kaderim olurdu. Çünkü biliyordum, ben dikiş tutmayan bir yaraydım. 
+                    Ben kaderi kanayan bir yaraydım.
+                    Ben küçük bir kesikte son bulan bir yaranın anısına ithaftım.
+                    
+                    Bu acının ithafı baştan anneme, annemin yitik ruhunda yaşayan babama, babamın kırık ninnisi ve annemin çığlığının değdiği ruhuma saplandı. Bense bir adama saplı kaldım, sapını çürüttüm. 
+                    
+                    Ben bir adama, saklandım. Beni kimse bulamaz zannettim. Seçilen ebenin ben olduğunu bilmiyorum. 
+                    
+                    Sonradan öğrendim, saklananlar onlar. Görüyorum, ama bulamıyorum. 
+                    
+                    "Bana değil. Ona.
+                    Ruhuma. 
+                    Onu tanımıyorum, tanıyamıyorum.
+                    Kimseyi, kendimi. 
+                    Hiç."</p>
+                  <a href="./kitap/Bir Semte Vurdu Gece/1.Bölüm.html" class="button">Oku</a>
+                </div>
+               
+              </div>
+            </li>
+
+            <li class="book-item small-12 medium-6 columns" data-groups='["romantik","ya"]' data-date-created='1954' data-title='Lord of the Flies' data-color='#db2e0f'>
+              <div class="bk-img">
+                <div class="bk-wrapper">
+                  <div class="bk-book bk-bookdefault">
+                    <div class="bk-front">
+                      <div class="bk-cover" style="background-image: url('http://wattcat.com/img//kor-heves-pre.jpg')"></div>
+                    </div>
+                    <div class="bk-back"></div>
+                    <div class="bk-left"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="item-details">
+                <h3 class="book-item_title">Kor Heves</h3>
+                <p class="author">@lefazen &bull; 2016</p>
+                <p>Saplantı. 
+
+                  Bir bedene, zihine, ruha saplantı. Her şey bundan ibaretti işte, zihnim saplanmıştı zihnine, ruhum saplanmıştı ruhuna ve bedenimin bedenine...
+                  </p>
+                  <div id="myDIV4">
+                      <button type="button" class="btnbtn-infobtn-lg" data-toggle="modal" data-target="#test4">Modal Görünümünde Oku! </button>
+
+                  </div>                      <a href="#" class="button ">Detaylar</a>  
+            
+                
+              </div>
+           
+
+              <div class="overlay-details">
+                <a href="#" class="close-overlay-btn">Close</a>
+                <div class="overlay-image">
+                  <img src="http://wattcat.com/img/kor-heves-ori.jpg" alt="Book Cover">
+                  <div class="back-color"></div>
+                </div>
+                <div class="overlay-desc activated">
+                  <h2 class="overlay_title">Kor Heves</h2>
+                  <p class="author">@lefazen</p>
+                  <p class="published">2016</p>
+                  <p class="synopsis">Saplantı. 
+
+                    Bir bedene, zihine, ruha saplantı. Her şey bundan ibaretti işte, zihnim saplanmıştı zihnine, ruhum saplanmıştı ruhuna ve bedenimin bedenine saplanma düşüncesi bile beni tüketiyordu. 
+                    
+                    O adam beni tüketiyordu. 
+                    
+                     Kızıl saçlarının asi tutamları karışırken, sigarasının dumanı yayıldı. Gece hakim, deniz yenik. 
+                    
+                    
+                    
+                    -
+                    
+                    "Kor Heves, kor, kör değil."</p>
+                  <a href="./kitap/Kor Heves/1.Bölüm.html" class="button">Oku</a>
+                </div>
+                
+            </li>
+
+        
+
+            <li class="book-item small-12 medium-6 columns" data-groups='["fantastik"]' data-date-created='2014' data-title='Aima' data-color='#a9afad'>
+              <div class="bk-img">
+                <div class="bk-wrapper">
+                  <div class="bk-book bk-bookdefault">
+                    <div class="bk-front">
+                      <div class="bk-cover" style="background-image: url('http://wattcat.com/img/aima-pre.jpg')"></div>
+                    </div>
+                    <div class="bk-back"></div>
+                    <div class="bk-left"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="item-details">
+                <h3 class="book-item_title">Aima</h3>
+                <p class="author">@nychtalydia &bull; 2014</p>
+                <p>6 Eylül 2005 
+                  Cinayet gecesi/ kayıp 4 yıl 
+                  
+                  5 Nisan 2018
+                  Kim Yerim: Kayıp
+                  Park Jimin kim?</p>
+                  <div id="myDIV5">
+                      <button type="button" class="btnbtn-infobtn-lg"  data-toggle="modal"      data-target="#test5">Modal Görünümünde Oku!</button>
+
+                  </div>                      <a href="#" class="button ">Detaylar</a>  
+            
+                
+              </div>
+              </div>
+
+              <div class="overlay-details">
+                <a href="#" class="close-overlay-btn">Kapat</a>
+                <div class="overlay-image">
+                  <img src="http://wattcat.com/img/aima-ori.jpg" alt="Book Cover">
+                  <div class="back-color"></div>
+                </div>
+                <div class="overlay-desc activated">
+                  <h2 class="overlay_title">Aima</h2>
+                  <p class="author">@nychtalydia</p>
+                  <p class="published">2014</p>
+                  <p class="synopsis">6 Eylül 2005 
+                    Cinayet gecesi/ kayıp 4 yıl 
+                    
+                    5 Nisan 2018
+                    Kim Yerim: Kayıp
+                    Park Jimin kim?</p>
+                  <a href="./Kitap/Aima/1.Bo%CC%88lu%CC%88m.html" class="button">Oku</a>
+                </div>
+                
+      
+            </li>
+      </section>
+
+    </div>
+
+    <!-- Footer Content --><img style="width:100%;" id="image" src="http://wattcat.com/img/mor-bas.png">
+    <footer id="footer" style="height:130px;" class="page-footer">
+      <div class="row footer-wrapper">
+       
+          <img src="https://i.hizliresim.com/k9EBl7.png" media="(max-width: 1200px)" alt="" style=" margin:0 auto;">
+
+          
+        
+      </div>
+      
+    </footer>
+
+  </div>
+  <!-- /main -->
+
+  <div class="main-overlay">asdsad  
+    <div class="overlay-full"></div>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- /main-container -->
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+
+
+
+        <div class="MorSalkim1"></div>
+
+
+
+      </div>
+    </div>
+  </div>
+<div class="modal fade bd-example-modal-lg" tabindex="-3" role="dialog" aria-labelledby="myLargeModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+
+
+
+        <div class="Nazenin1"></div>
+
+
+
+      </div>
+    </div>
+  </div>
+  
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.js'></script>
+<script src='KitapBolumleriCekme.js'></script>
+
+
+    <script  src="http://wattcat.com/css/index.js"></script>
+
+    
+    <script>
+      var grid = document.querySelector("#grid");
+      
+      if(localStorage.getItem("ekledigimiz_kitap") != null)
+        grid.innerHTML += localStorage.getItem("ekledigimiz_kitap");
+      </script>
+
+
+</body>
+
+</html>
